@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'games' %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+  
+  
+
+    <div id="container">
+    	
+		<div id="user_nav" >
+	        <% if current_user %>
+	          <%= link_to "Logout", logout_path %> |
+	          <%= link_to "Edit User", edit_user_path(:current) %>
+	        <% else %> 
+	          <%= link_to "Login", login_path %> |
+	          <%= link_to "Signup", new_user_path %>
+	        <% end %>
+	      </div>
+	
+
+<div id="wrapper">
+	
+
+
+      
+      
+      <div>
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+      
+      <%- if show_title? -%>
+        <h1><%=h yield(:title) %></h1>
+      <%- end -%>
+      </div>
+      
+	<div id="tabs">
+		
+		<ul id="menu_list">
+			<li><a href="#">Menu 1</a></li>
+			<li><a href="#">Menu 2</a></li>
+			<li><a href="#">Menu 3</a></li>
+			<li><a href="#">Menu 4</a></li>
+		</ul>
+			
+		
+	</div><!-- #tabs -->
+	
+	
+
+<div id="body">
+	
+
+	<div id="left_column">
+		<%= yield :left_menu %>
+		
+		
+	</div><!-- #left_column -->
+		
+	<div id="right_column">
+				
+		<%= yield %>
+	
+	</div><!-- #right_column -->
+
+</div><!-- #body -->
+      
+      
+      
+
+</div><!-- #wrapper -->
+
+	
+   
+ </div><!-- #container -->
+  </body>
+</html>

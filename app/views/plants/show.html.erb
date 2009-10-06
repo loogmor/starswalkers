@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @plant.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @plant.description %>
+</p>
+
+<p>
+  <b>Healing point:</b>
+  <%=h @plant.healing_point %>
+</p>
+
+
+<%= link_to 'Edit', edit_plant_path(@plant) %> |
+<%= link_to 'Back', plants_path %>

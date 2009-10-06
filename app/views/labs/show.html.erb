@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @lab.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%=h @lab.level %>
+</p>
+
+<p>
+  <b>Energy:</b>
+  <%=h @lab.energy %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @lab.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_lab_path(@lab) %> |
+<%= link_to 'Back', labs_path %>
