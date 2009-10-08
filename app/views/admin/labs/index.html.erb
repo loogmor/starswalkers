@@ -1,0 +1,26 @@
+<h1>Listing labs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Energy</th>
+    <th>User</th>
+  </tr>
+
+<% @labs.each do |lab| %>
+  <tr>
+    <td><%=h lab.name %></td>
+    <td><%=h lab.level %></td>
+    <td><%=h lab.energy %></td>
+    <td><%=h lab.user_id %></td>
+    <td><%= link_to 'Show', admin_lab_path(lab) %></td>
+    <td><%= link_to 'Edit', edit_admin_lab_path(lab) %></td>
+    <td><%= link_to 'Destroy', admin_lab_path(lab), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New lab', new_admin_lab_path %>

@@ -1,0 +1,24 @@
+<h1>Listing plants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Healing point</th>
+  </tr>
+
+<% @plants.each do |plant| %>
+  <tr>
+    <td><%=h plant.name %></td>
+    <td><%=h plant.description %></td>
+    <td><%=h plant.healing_point %></td>
+    <td><%= link_to 'Show', admin_plant_path(plant) %></td>
+    <td><%= link_to 'Edit', edit_admin_plant_path(plant) %></td>
+    <td><%= link_to 'Destroy', admin_plant_path(plant), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New plant', new_admin_plant_path %>

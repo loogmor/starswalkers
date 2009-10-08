@@ -1,0 +1,24 @@
+<h1>Editing plant</h1>
+
+<% form_for(@plant, :url => {:action => "create"}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :healing_point %><br />
+    <%= f.text_field :healing_point %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_plant_path(@plant) %> |
+<%= link_to 'Back', admin_plants_path %>

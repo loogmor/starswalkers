@@ -1,0 +1,24 @@
+<h1>Listing items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Fuel point</th>
+  </tr>
+
+  <% @items.each do |item| %>
+  <tr>
+    <td><b><%=h item.name %></b></td>
+    <td><%=h item.description %></td>
+    <td><%=h item.fuel_point %></td>
+    <td><%= link_to 'Show', admin_item_path(item) %></td>
+    <td><%= link_to 'Edit', edit_admin_item_path(item) %></td>
+    <td><%= link_to 'Destroy', admin_item_path(item), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New item', new_admin_item_path %>
